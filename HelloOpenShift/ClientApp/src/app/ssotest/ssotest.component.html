@@ -1,0 +1,16 @@
+<h1>SSO Test</h1>
+
+<div>
+  <label class="col-xs-9 text-xs-left">SSO Token:</label>
+  <button class="col-xs-3" (click)="fetchSSOTokey()">Load From Browser</button>
+  <input style="width:100%" type="text" required [(ngModel)]="SSOToken">
+
+</div>
+
+<div style="margin-top:15px">
+  <button (click)="callSSOService()">Call SSO Service</button>
+</div>
+<div style="margin-top:15px">
+  <label class="col-xs-12 text-xs-left">SSO Test Results:</label>
+  <textarea style="width:100%" rows="50" required [(ngModel)]="SSOUser"></textarea>
+</div>
