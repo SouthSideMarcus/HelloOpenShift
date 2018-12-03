@@ -11,6 +11,7 @@ using System.IO;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Text;
+using System.Web;
 
 namespace HelloOpenShift.Controllers
 {
@@ -63,7 +64,7 @@ namespace HelloOpenShift.Controllers
                 string val = _httpContextAccessor.HttpContext.Request.Cookies[S_SSO_CookieName];
                 if (!String.IsNullOrEmpty(val))
                 {
-                    rval.sso_token = val;
+                    rval.sso_token = HttpUtility.UrlEncode(val);
                     rval.is_success = true;
                 }
                 else
